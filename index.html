@@ -5,202 +5,85 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Árad a Tisza – Nincs, ami tartsa</title>
   <meta name="description" content="Ugyanaz az üzenet több stílusban: techno, rap, retro disco, K-pop, mulatós és még több. Találd meg a hozzád legközelebb álló verziót." />
-  <style>
-    :root {
-      --bg: #0b1120;
-      --panel: #131c31;
-      --panel-2: #1a2540;
-      --text: #eef2ff;
-      --muted: #b8c2e0;
-      --accent: #38bdf8;
-      --accent-2: #22c55e;
-      --border: rgba(255,255,255,0.08);
-      --shadow: 0 10px 30px rgba(0,0,0,0.30);
-      --radius: 18px;
-    }
-
-    * { box-sizing: border-box; }
-
+ <style>
     body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background:
-        radial-gradient(circle at top, rgba(56,189,248,0.12), transparent 30%),
-        linear-gradient(180deg, #08101d 0%, #0b1120 100%);
-      color: var(--text);
-      line-height: 1.55;
-    }
-
-    a {
-      color: var(--accent);
-      text-decoration: none;
+        margin: 0;
+        font-family: 'Segoe UI', sans-serif;
+        background: linear-gradient(135deg, #020617, #0f172a);
+        color: #e2e8f0;
     }
 
     .container {
-      width: min(1120px, calc(100% - 32px));
-      margin: 0 auto;
-    }
-
-    .hero {
-      padding: 64px 0 36px;
-    }
-
-    .hero-box {
-      background: linear-gradient(135deg, rgba(19,28,49,0.96), rgba(26,37,64,0.90));
-      border: 1px solid var(--border);
-      border-radius: 24px;
-      padding: 36px;
-      box-shadow: var(--shadow);
-    }
-
-    .eyebrow {
-      display: inline-block;
-      font-size: 13px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 14px;
-      font-weight: bold;
+        max-width: 900px;
+        margin: auto;
+        padding: 30px 20px;
     }
 
     h1 {
-      margin: 0 0 14px;
-      font-size: clamp(32px, 6vw, 52px);
-      line-height: 1.05;
+        font-size: 36px;
+        text-align: center;
+        margin-bottom: 10px;
+        color: #38bdf8;
+        text-shadow: 0 0 10px rgba(56,189,248,0.6);
     }
 
-    .lead {
-      font-size: 18px;
-      color: var(--muted);
-      max-width: 780px;
-      margin: 0 0 20px;
-    }
-
-    .mini-guide {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
-      gap: 12px;
-      margin-top: 24px;
-    }
-
-    .mini-guide div {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 14px;
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .section-title {
-      margin: 34px 0 16px;
-      font-size: 24px;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 18px;
-      margin-bottom: 40px;
+    p {
+        text-align: center;
+        color: #94a3b8;
+        max-width: 600px;
+        margin: 0 auto 30px;
     }
 
     .card {
-      background: linear-gradient(180deg, var(--panel), var(--panel-2));
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 16px;
-      box-shadow: var(--shadow);
+        background: rgba(30, 41, 59, 0.6);
+        backdrop-filter: blur(10px);
+        padding: 20px;
+        border-radius: 16px;
+        margin-bottom: 30px;
+        transition: 0.3s;
+        border: 1px solid rgba(255,255,255,0.05);
     }
 
-    .card h2 {
-      margin: 0 0 8px;
-      font-size: 21px;
-      line-height: 1.2;
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(56,189,248,0.2);
     }
 
-    .tag {
-      display: inline-block;
-      margin-bottom: 10px;
-      font-size: 12px;
-      padding: 6px 10px;
-      border-radius: 999px;
-      background: rgba(56,189,248,0.12);
-      color: #a5f3fc;
-      border: 1px solid rgba(56,189,248,0.22);
+    h2 {
+        margin-bottom: 10px;
+        color: #f1f5f9;
     }
 
-    .desc {
-      color: var(--muted);
-      font-size: 15px;
-      margin: 0 0 14px;
-      min-height: 48px;
+    iframe {
+        width: 100%;
+        height: 315px;
+        border: none;
+        border-radius: 12px;
+        margin-top: 10px;
     }
 
-    .video-wrap {
-      position: relative;
-      width: 100%;
-      padding-top: 56.25%;
-      overflow: hidden;
-      border-radius: 14px;
-      background: #000;
-      margin-bottom: 12px;
+    .badge {
+        display: inline-block;
+        background: #38bdf8;
+        color: #020617;
+        font-size: 12px;
+        padding: 4px 10px;
+        border-radius: 999px;
+        margin-bottom: 10px;
     }
-
-    .video-wrap iframe {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      border: 0;
-    }
-
-    .links {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 10px 14px;
-      border-radius: 12px;
-      background: rgba(255,255,255,0.05);
-      color: var(--text);
-      border: 1px solid var(--border);
-      font-size: 14px;
-    }
-
-    .btn:hover {
-      background: rgba(255,255,255,0.08);
-    }
-
-    .footer-box {
-      margin: 10px 0 50px;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 22px;
-      color: var(--muted);
-    }
-
-    @media (max-width: 700px) {
-      .hero-box { padding: 24px; }
-      .lead { font-size: 16px; }
-      .card h2 { font-size: 19px; }
-    }
-  </style>
+</style>
 </head>
 <body>
   <header class="hero">
     <div class="container">
       <div class="hero-box">
         <div class="eyebrow">Nemzeti Áradás</div>
-        <h1>Nincs, ami tartsa</h1>
-        <p class="lead">
-          Ugyanaz az üzenet, több hangzásban. Ezek a verziók ugyanarra a dalra épülnek,
-          csak más-más stílusban szólalnak meg — így szinte biztos, hogy találsz köztük
-          olyat, ami igazán közel áll hozzád.
-        </p>
+        <h1>ÁRAD A TISZA</h1>
+
+          <p>
+          Ugyanaz az üzenet — több hangon.
+          Találd meg azt a verziót, ami megszólít.
+          </p>
 
         <div class="mini-guide">
           <div><strong>Buliznál?</strong><br>Próbáld a techno vagy a club verziókat.</div>
@@ -218,6 +101,7 @@
     <section class="grid">
 
       <article class="card">
+        <div class="badge">🔥 Kiemelt</div>
         <div class="tag">Techno / Club Edit</div>
         <h2>Nincs ami tartsa - Durván Veretősen árad</h2>
         <p class="desc">Sötét, erős, klubos hangzás, nagy dropokkal. Ha azonnal energiát akarsz, ezzel érdemes kezdeni.</p>
